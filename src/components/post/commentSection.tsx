@@ -26,7 +26,7 @@ const CommentSection = ({
     <div className='mt-4 space-y-6'>
       <div className='space-y-4'>
         <div className='flex justify-between'>
-          <h3 className='text-lg font-medium'>Comments</h3>
+          <h3 className='text-lg font-medium text-neutral-900 dark:text-gray-50'>Comments</h3>
           <SortingSelect options={options} />
         </div>
         <div className='space-y-4'>
@@ -49,8 +49,11 @@ const CommentSection = ({
                               </Avatar>
                               <div className='flex-1'>
                                 <div className='flex items-center gap-2'>
-                                  <span className='font-medium'>u/{comment.name}</span>•
-                                  <span className='text-muted-foreground text-xs'>
+                                  <span className='font-medium text-neutral-900 dark:text-gray-50'>
+                                    u/{comment.name}
+                                  </span>
+                                  •
+                                  <span className='text-xs text-neutral-900 dark:text-gray-50'>
                                     {new Date(comment.createdAt).toLocaleDateString('en-US', {
                                       year: '2-digit',
                                       month: '2-digit',
@@ -58,7 +61,9 @@ const CommentSection = ({
                                     })}
                                   </span>
                                 </div>
-                                <p className='mt-1 text-sm'>{comment.body}</p>
+                                <p className='mt-1 text-sm text-neutral-900 dark:text-gray-50'>
+                                  {comment.body}
+                                </p>
                               </div>
                             </div>
                           </div>
