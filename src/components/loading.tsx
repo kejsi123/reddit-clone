@@ -16,12 +16,16 @@ export const LoadingSkeleton = ({ length = 1, size = '4' }: LoadingSkeletonProps
     </div>
   ));
 };
-export const LoadingSquareSkeleton = ({ length = 1, size = '40' }: LoadingSkeletonProps) => {
+export const LoadingSquareSkeleton = ({
+  length = 1,
+  size = '40',
+  width = '44',
+}: LoadingSkeletonProps & { width: string }) => {
   return (
     <div className='grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
       {Array.from({ length }).map((_, index) => (
         <div key={index} className='hover:bg-muted/50 cursor-pointer transition-colors'>
-          <Skeleton className={cn(`h-${size} w-44 rounded-md`)} />
+          <Skeleton className={cn(`h-${size} w-${width} rounded-md`)} />
         </div>
       ))}
     </div>

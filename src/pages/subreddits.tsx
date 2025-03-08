@@ -1,7 +1,5 @@
 import Subreddits from '@/components/subreddits/subreddits';
 
-const SubredditsPage = () => {
+export const SubredditsPage = () => {
   return <Subreddits />;
 };
-
-export default SubredditsPage;

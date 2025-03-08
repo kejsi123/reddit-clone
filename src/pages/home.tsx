@@ -1,7 +1,5 @@
 import SelectCommunity from '@/components/home/selectCommunity';
 
-const HomePage = () => {
+export const HomePage = () => {
   return <SelectCommunity />;
 };
-
-export default HomePage;

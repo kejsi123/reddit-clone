@@ -19,6 +19,7 @@ const ImageWithFallback = ({ ...props }: React.ImgHTMLAttributes<HTMLImageElemen
     <img
       {...props}
       className='h-[30rem] w-full object-cover'
+      loading='lazy'
       onClick={(e) => e.stopPropagation()}
       onError={(e) => {
         setHasError(true);
