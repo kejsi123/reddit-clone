@@ -1,5 +1,7 @@
+import Subreddit from '@/components/single-subreddit/subreddit';
+
 const SingleSubredditPage = () => {
-  return <div>SingleSubredditPage</div>;
+  return <Subreddit />;
 };
 
 export default SingleSubredditPage;
