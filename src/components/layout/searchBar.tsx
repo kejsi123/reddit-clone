@@ -28,8 +28,10 @@ const SearchBar = () => {
   }, [open]);
 
   const filteredSubreddits = query
-    ? data?.filter((subreddit) => subreddit.title.toLowerCase().includes(query.toLowerCase()))
-    : data;
+    ? data?.pages
+        .flatMap((page) => page.data)
+        .filter((subreddit) => subreddit.title.toLowerCase().includes(query.toLowerCase()))
+    : data?.pages.flatMap((page) => page.data);
 
   return (
     <div className='relative w-full md:w-[300px] lg:w-[400px]'>

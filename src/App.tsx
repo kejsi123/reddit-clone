@@ -4,6 +4,7 @@ import Layout from './pages/layout';
 import SubredditsPage from './pages/subreddits';
 import SingleSubredditPage from './pages/singleSubreddit';
 import HomePage from './pages/home';
+import SinglePostPage from './pages/singlePost';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,16 +24,19 @@ function App() {
           path: '/subreddits/:id',
           element: <SingleSubredditPage />,
         },
+        {
+          path: '/subreddits/:id/post/:postId',
+          element: <SinglePostPage />,
+        },
       ],
     },
   ]);
 
-  const apiUrl = import.meta.env.VITE_API_URL;
-  console.log(apiUrl);
-
   return (
     <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
-      <RouterProvider router={router} />
+      <div className='bg-gray-50 dark:bg-neutral-900'>
+        <RouterProvider router={router} />
+      </div>
     </ThemeProvider>
   );
 }
