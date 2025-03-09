@@ -3,13 +3,20 @@ import { useSubreddits } from '@/hooks/useSubreddits';
 import { Link } from 'react-router-dom';
 import { LoadingSkeleton } from '../loading';
 import ConditionalRenderer from '../conditionalRenderer';
+import ErrorComponent from '../errorComponent';
 
 const TopCommunities = () => {
   const { isLoading, data, error } = useSubreddits();
 
   console.log(data);
 
-  if (error) return <div>error</div>;
+  if (error)
+    return (
+      <ErrorComponent
+        message='An unexpected error happened. Try again later!'
+        title='Subreddits data was not found'
+      />
+    );
 
   return (
     <Card className='overflow-hidden border py-1 shadow-sm'>

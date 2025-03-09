@@ -35,7 +35,6 @@ const PostCard = ({
     navigate(`/subreddits/${post.subredditId}/post/${post.id}`);
   };
 
-  // console.log('error', error);
   return (
     <Card
       onClick={handleCardClick}

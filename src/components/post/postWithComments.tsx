@@ -11,13 +11,20 @@ import ImageWithFallback from './imageWithFallback';
 import { cn } from '@/lib/utils';
 import CommentSection from './commentSection';
 import { useVote } from '@/hooks/useVote';
+import ErrorComponent from '../errorComponent';
 
 const PostWithComments = () => {
   const { id, postId } = useParams() as { id: string; postId: string };
   const { isLoading, status, data } = useSinglePost(id, postId);
   const { userVote, handleVote } = useVote(postId, id);
 
-  if (status === 'error') return <>error</>;
+  if (status === 'error')
+    return (
+      <ErrorComponent
+        message='There was a problem with getting the post. Try again later'
+        title='Failed to get the post'
+      />
+    );
 
   return (
     <div>

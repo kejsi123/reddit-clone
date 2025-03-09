@@ -23,7 +23,7 @@ const ImageWithFallback = ({ ...props }: React.ImgHTMLAttributes<HTMLImageElemen
       onClick={(e) => e.stopPropagation()}
       onError={(e) => {
         setHasError(true);
-        props.onError?.(e); // Preserve any custom onError handler
+        props.onError?.(e);
       }}
     />
   );

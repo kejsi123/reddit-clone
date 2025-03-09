@@ -55,7 +55,7 @@ function App() {
           path: '/subreddits/:id/post/:postId',
           element: (
             <Suspense fallback={<Loader2 className='mx-auto size-44 animate-spin' />}>
-              <SinglePostPage />,
+              <SinglePostPage />
             </Suspense>
           ),
         },
